@@ -80,6 +80,10 @@ ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
 ro.sf.lcd_density=420
 
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.dpm.feature=5
+
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
 drm.service.enabled=true
@@ -148,9 +152,9 @@ persist.data.iwlan.enable=true \
 persist.dbg.ims_volte_enable=1 \
 persist.dbg.volte_avail_ovr=1 \
 persist.dbg.vt_avail_ovr=1 \
-persist.dbg.wfc_avail_ovr=0 \
 persist.radio.apm_sim_not_pwdn=1 \
 persist.radio.calls.on.ims=0 \
+persist.vendor.radio.cs_srv_type=1 \
 persist.radio.csvt.enabled=false \
 persist.radio.hw_mbn_update=0 \
 persist.radio.jbims=0 \
@@ -160,6 +164,7 @@ persist.radio.sw_mbn_update=0 \
 persist.radio.videopause.mode=1 \
 persist.vendor.radio.custom_ecc=1 \
 persist.vendor.radio.rat_on=combine \
+persist.vendor.radio.redir_party_num=1 \
 persist.vendor.radio.sib16_support=1 \
 ril.subscription.types=NV,RUIM \
 rild.libargs=-d/dev/smd0 \
@@ -180,6 +185,12 @@ net.tcp.2g_init_rwnd=10
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.sys.usb.config.extra=none
+
+# Volte
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.VT_ENABLE=1 \
+    persist.radio.VT_HYBRID_ENABLE=1 \
+    persist.dbg.wfc_avail_ovr=1
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
